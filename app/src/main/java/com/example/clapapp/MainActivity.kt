@@ -21,15 +21,7 @@ class MainActivity : AppCompatActivity() {
         seekBar = findViewById(R.id.sbClap)
         handler = Handler(Looper.getMainLooper())
         val btn1 = findViewById<FloatingActionButton>(R.id.fabPlay)
-        btn1.setOnClickListener {
-            if(mp==null){
-                /*if mediaplayer is null then we have create object
-                of mediaplayer class*/
-                mp = MediaPlayer.create(this, R.raw.clapping)
-                initializeSeekBar()
-            }
-            mp?.start()
-        }
+       
         val btn2 = findViewById<FloatingActionButton>(R.id.fabPause)
         btn2.setOnClickListener {
             mp?.pause()
