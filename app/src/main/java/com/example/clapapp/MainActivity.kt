@@ -20,24 +20,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         seekBar = findViewById(R.id.sbClap)
         handler = Handler(Looper.getMainLooper())
-        val btn1 = findViewById<FloatingActionButton>(R.id.fabPlay)
        
-        val btn2 = findViewById<FloatingActionButton>(R.id.fabPause)
-        btn2.setOnClickListener {
-            mp?.pause()
-
-        }
-        val btn3 = findViewById<FloatingActionButton>(R.id.fabStop)
-        btn3.setOnClickListener {
-            mp?.stop()
-            /* after stopping mediaplayer we reset and release
-            it according to rules*/
-            mp?.reset()
-            mp?.release()
-            mp = null //to avoid unnecessary memory consumption
-            handler.removeCallbacks(runnable)
-            seekBar.progress = 0
-        }
+        
     }
     private fun initializeSeekBar(){
         seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
